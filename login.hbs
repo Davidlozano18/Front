@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inicio de Sesión</title>
+    <!-- Font Awesome CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <!-- Estilos CSS -->
+    <style>
+        /* Estilos globales */
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #5c092b;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        /* Contenedor del formulario de inicio de sesión */
+        .login-container {
+            width: 400px;
+            /* Ancho del círculo */
+            height: 400px;
+            /* Altura del círculo */
+            border-radius: 50%;
+            /* Hace que el contenedor sea circular */
+            background-color: #004d40;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+
+        /* Título del formulario */
+        .login-container h2 {
+            margin-bottom: 30px;
+            text-align: center;
+            color: #fff;
+        }
+
+        /* Contenedor de los campos de entrada */
+        .input-container {
+            margin-bottom: 20px;
+            width: 80%;
+        }
+
+        /* Estilos de los campos de entrada */
+        .input-container input {
+            width: 100%;
+            padding: 12px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            font-size: 16px;
+            transition: border-color 0.3s ease;
+            background-color: #fff;
+            color: #333;
+        }
+
+        /* Estilos de los campos de entrada cuando tienen el foco */
+        .input-container input:focus {
+            outline: none;
+            border-color: #007bff;
+        }
+
+        /* Estilos del texto de marcador de posición */
+        .input-container input::placeholder {
+            color: #999;
+        }
+
+        /* Contenedor del botón */
+        .button-container {
+            text-align: center;
+            width: 80%;
+        }
+
+        /* Estilos del botón */
+        .button-container button {
+            width: 100%;
+            padding: 12px;
+            background-color: #1403fc;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            font-size: 16px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        /* Estilos del botón al pasar el cursor sobre él */
+        .button-container button:hover {
+            background-color: #0056b3;
+        }
+
+        /* Mensaje de error */
+        .error-message {
+            margin-top: 20px;
+            color: #ff4040;
+            text-align: center;
+            font-size: 14px;
+            width: 80%;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Contenedor principal -->
+    <div class="login-container">
+        <!-- Título del formulario -->
+        <h2>Inicia Sesión</h2>
+        <!-- Formulario de inicio de sesión -->
+        <form id="loginForm" action="/login" method="POST">
+            <!-- Campo de entrada para el nombre de usuario -->
+            <div class="input-container">
+                <input type="text" id="username" name="username" placeholder="Username" required>
+            </div>
+            <!-- Campo de entrada para la contraseña -->
+            <div class="input-container">
+                <input type="password" id="password" name="password" placeholder="Password" required>
+            </div>
+            <!-- Botón de inicio de sesión -->
+            <div class="button-container">
+                <button type="submit">Ingresar</button>
+            </div>
+            <!-- Mensaje de error -->
+            <div class="error-message" id="errorMessage">{{ errorMessage }}</div>
+        </form>
+    </div>
+</body>
+
+</html>
